@@ -1,0 +1,44 @@
+@import "__variables";
+
+footer{
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	min-height: 12rem;
+
+	background: @header-color;
+	color: @title-color;
+	z-index: -1;
+
+	span{
+		transition: all .4s;
+
+		&:first-child{
+			margin-bottom: 5px;
+		}
+
+		&:nth-child(2){
+			opacity: 0.6;
+		}
+
+	}
+
+	&:hover{
+		span{
+			&:first-child{
+				color: white;
+			}
+
+			&:nth-child(2){
+				opacity: 1;
+			}
+		}
+	}
+
+	a{
+		text-decoration: none;
+	}
+
+}

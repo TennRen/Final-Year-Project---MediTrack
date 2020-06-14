@@ -1,0 +1,71 @@
+
+@text-color: #282828;
+@header-color: #323232;
+@label-color: #484848;
+@title-color: #646464;
+
+@select-background: #28a7ff;
+@select-color: #ffffff;
+
+@border-color: rgb(180, 180, 184);
+@light-border-color: rgb(222, 223, 227);
+
+@primary-btn-color: rgb(95, 136, 252);
+@primary-btn-color-faint: rgba(95, 136, 252, 0.84);
+
+@red: rgb(200, 52, 83);
+
+@tooltip-background: rgb(53, 60, 74);
+@tooltip-color: rgb(216, 220, 223);
+
+@info-background-gray: rgb(245, 247, 251);
+@subnav-background: #fbfcfe;
+
+@general-rounded-border: 3px;
+
+@max-width : 1200px;
+
+.thick-input-outline(@color: @primary-btn-color-faint){
+	box-shadow: 0 0 0 2px @primary-btn-color-faint;
+}
+
+.smooth-shadow(@color: rgb(0,0,0)){
+	box-shadow:
+		0 1.5px 2.2px rgba(@color, 0.07),
+		0 3.6px 5.3px rgba(@color, 0.05),
+		0 6.8px 10px rgba(@color, 0.042),
+		0 12.1px 17.9px rgba(@color, 0.035),
+		0 22.6px 33.4px rgba(@color, 0.028),
+		0 54px 80px rgba(@color, 0.02);
+}
+
+.gpu{
+	-webkit-backface-visibility: hidden;
+	-moz-backface-visibility: hidden;
+	-ms-backface-visibility: hidden;
+	backface-visibility: hidden;
+
+	-webkit-perspective: 1000px;
+	-moz-perspective: 1000px;
+	-ms-perspective: 1000;
+	perspective: 1000px;
+}
+
+.gpu-transform(@transformer){
+	-webkit-transform: translate3d(0, 0, 0) @transformer;
+	-moz-transform: translate3d(0, 0, 0) @transformer;
+	-ms-transform: translate3d(0, 0, 0) @transformer;
+	transform: translate3d(0, 0, 0) @transformer;
+}
+
+.scrollGradient {
+	background:
+		linear-gradient(#ffffff 30%, rgba(255,255,255, 0)),
+		linear-gradient(rgba(255,255,255, 0), #ffffff 70%) 0 100%,
+		radial-gradient(farthest-side at 50% 0, rgba(146,146,146, 0.5), rgba(0,0,0,0)),
+		radial-gradient(farthest-side at 50% 100%, rgba(146,146,146, 0.5), rgba(0,0,0,0)) 0 100%;
+	background-color: #ffffff;
+	background-repeat: no-repeat;
+	background-attachment: local, local, scroll, scroll;
+	background-size: 100% 16px, 100% 16px, 100% 8px, 100% 8px;
+}

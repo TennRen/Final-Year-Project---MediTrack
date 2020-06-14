@@ -1,0 +1,43 @@
+<html lang="en">
+<head>
+  <%- include("../partials/imports") %>
+  <%- include("../partials/meta", {title: "Contact"}) %>
+</head>
+<body>
+  <%- include("../partials/nav") %>
+  <div class="center-mid">
+
+    <div class="form-container wider">
+      <p class="form-sign">Contact Us</p>
+      <p class="sign-desc">Please leave any messages or feedback below!</p>
+      <form class="form" id="contact-form">
+        <label>
+          <span>Title:</span>
+          <input class="form-input t-left" name="title" type="text">
+        </label>
+
+        <label>
+          <span>Message:</span>
+          <textarea class="form-input t-left" name="message" rows="10"></textarea>
+        </label>
+
+        <button type="submit" class="submit-btn">Submit</button>
+      </form>
+    </div>
+
+  </div>
+
+  <%- include("../partials/footer") %>
+
+  <script>
+    $('#contact-form').on('submit', ev => {
+      ev.preventDefault();
+      ev.stopPropagation();
+      sendFeedback(
+          $('[name=title]').val(),
+          $('[name=message]').val()
+      );
+    });
+  </script>
+</body>
+</html>

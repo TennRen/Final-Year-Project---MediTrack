@@ -1,0 +1,13 @@
+<nav id="menuNavBar">
+    <a href="/"><h1><%- productName %></h1></a>
+    <a href="/med/pillbox">Pillbox</a>
+    <a href="/med/interaction">Interactions</a>
+    <a href="/contact">Contact</a>
+
+    <% if (isAuthenticated){ %>
+        <a href="/account/logout">Log out</a>
+    <% } else { %>
+        <a href="/login">Log in</a>
+    <% } %>
+
+</nav>

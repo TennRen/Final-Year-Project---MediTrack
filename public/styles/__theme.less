@@ -1,0 +1,276 @@
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans|Open+Sans:300,400,500,600,700&display=swap');
+@import "__variables";
+
+
+button{
+	background: transparent;
+	color: @title-color;
+	border: 1px solid @title-color;
+	border-radius: @general-rounded-border;
+	padding: 6px 9px;
+	transition: all .3s;
+
+	font-size: 0.74rem;
+	font-weight: 300;
+
+	&.mini{
+		max-width: 5rem;
+		min-height: 1.8rem;
+	}
+
+	&.filled{
+		color: white;
+		background: @title-color;
+		border-color: @title-color;
+	}
+
+	&.primary{
+		color: @primary-btn-color;
+		border-color: @primary-btn-color;
+
+		&.filled{
+			color: white;
+			background: @primary-btn-color;
+			border-color: @primary-btn-color;
+		}
+	}
+
+	&.danger{
+		color: @red;
+		border-color: @red;
+
+		&.filled{
+			color: white;
+			background: @red;
+			border-color: @red;
+		}
+	}
+
+	&.auto-mid{
+		margin: 8px auto 5px;
+		max-width: 12rem;
+	}
+
+	&:focus{
+		outline: none;
+		opacity: 0.85;
+	}
+
+	&:hover{
+		opacity: 0.7;
+		cursor: pointer;
+	}
+
+	&[disabled]{
+		color: white;
+		background: @title-color;
+		border-color: @title-color;
+		opacity: 0.5;
+		pointer-events:none;
+	}
+}
+
+a{
+	color: @primary-btn-color;
+
+	&:visited,
+	&:hover{
+		color: @select-background;
+	}
+}
+
+label.input{
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 1rem;
+	position: relative;
+	height: fit-content;
+
+	&.no-push-bottom{
+		margin-bottom: 0;
+	}
+
+	&.row{
+		flex-direction: row;
+		align-items: center;
+		justify-content: end;
+		margin-bottom:0;
+
+		span{
+			text-align: end;
+			margin-right: 1rem;
+			flex: 1;
+		}
+
+		input{
+			flex: 3;
+		}
+	}
+
+	span{
+		font-size: 0.74rem;
+		font-weight: 300;
+		color: @label-color;
+		margin-bottom: 5px;
+	}
+
+	input{
+		& + i{
+			position: absolute;
+			right: .4rem;
+			//top: 1.74rem;
+			bottom: 0.45em;
+			font-size: 0.9em;
+			pointer-events: none;
+
+			&.fa-exclamation-triangle{
+				color: orange;
+				opacity: 0;
+				transition: all .3s;
+			}
+
+			& + .err-msg{
+				position: absolute;
+				left: calc(100% + 0.5rem);
+				top: 1.15rem;
+				font-weight: 500;
+				background: @tooltip-background;
+				color: @tooltip-color;
+				padding: 0.5rem;
+				width: fit-content;
+				border-radius: @general-rounded-border;
+				.smooth-shadow();
+				opacity: 0;
+				transition: all .3s;
+			}
+		}
+
+		&:invalid + i{
+			opacity: 1;
+		}
+
+		&:focus:invalid + i + .err-msg{
+			left: calc(100% + 1rem);
+			opacity: 1;
+		}
+	}
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="search"],
+input[type="number"]{
+	border-radius: @general-rounded-border;
+	color: @text-color;
+	border: 2px solid @light-border-color;
+	padding: 6px 7.2px;
+	font-size: 0.72rem;
+
+	&:invalid{
+		border: 2px solid @red;
+	}
+
+	&:not(:read-only):focus{
+		outline:none;
+		border: 2px solid @primary-btn-color-faint;
+	}
+
+	&:read-only:focus{
+		outline:none;
+		border: 2px solid @tooltip-background;
+	}
+
+	&:read-only.no-border{
+		border-color: transparent;
+	}
+
+}
+
+input[type="checkbox"]{
+	border-radius: @general-rounded-border;
+	border: 2px solid transparent;
+	background: @light-border-color;
+	-webkit-appearance: none;
+	display: inline-block;
+	position: relative;
+	width: calc(1.2em + 2px);
+	height: calc(1.2em + 2px);
+	white-space: nowrap;
+	vertical-align: text-top;
+	margin:0;
+
+	&:checked{
+		background: @select-background;
+	}
+
+	&:focus{
+		border-color: @primary-btn-color;
+		outline: none;
+	}
+
+}
+
+span{
+	&.hint{
+		font-style: italic;
+		color: @border-color;
+		font-size: 0.6rem;
+	}
+}
+
+p{
+	font-size: 0.6rem;
+}
+
+.t-mid{
+	text-align: center;
+}
+
+img{
+	&.brand-img{
+		width: 6.5rem;
+		padding: 3% 2.5% 3% 3.5%;
+		border-radius: 12%;
+		.smooth-shadow();
+
+		&.simple{
+			width: 4rem;
+			padding:0;
+			border-radius: 0;
+			box-shadow: none;
+		}
+	}
+
+	&.brand{
+		height: 2.8rem;
+	}
+}
+
+.quiet{
+	color: rgba(0,0,0,0.2);
+}
+
+.muted{
+	color: rgba(0,0,0,0.5);
+}
+
+hr{
+	border: 0 transparent;
+	border-bottom: 1px solid rgba(@light-border-color, 0.3);
+	width: 100%;
+
+	&.mini{
+		width: 80%
+	}
+
+	&.push{
+		margin: 2.46rem 1.2rem;
+	}
+}
+
+ins{
+	// use for dynamic insertion of data
+	text-decoration: none;
+	font-size: 1em;
+}

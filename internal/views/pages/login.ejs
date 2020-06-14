@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include("../partials/imports") %>
+  <%- include("../partials/meta", {title: "Login"}) %>
+</head>
+<body>
+
+  <div class="center-mid">
+    <!--login Form-->
+    <div class="form-container" id="login-form">
+      <p class="form-sign"> Welcome to <%- productName %>!<br><br> Please sign in</p>
+      <form class="form" action="/api/auth/do-login" method="post">
+        <input class="form-input" name="email" required type="email" placeholder="Email">
+        <input class="form-input" name="password" required type="password" placeholder="Password">
+
+        <button type="submit" class="submit-btn">Sign in</button>
+        <br>
+        <span class="sub-hint"><a class="sub-link" href="#">Forgot Password?</a></span>
+        <br>
+        <span class="sub-hint">Don't have an account? <a class="sub-link" href="/register">Register</a></span>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    let loginForm = $('#login-form');
+
+    loginForm.on('submit', ev => {
+      ev.preventDefault();
+      ev.stopPropagation();
+
+      performLogin( loginForm.find('[name=email]').val(), loginForm.find('[name=password]').val() );
+    });
+  </script>
+
+  <%- include("../partials/footer") %>
+
+</body>
+</html>

@@ -1,0 +1,32 @@
+<html lang="en">
+<head>
+  <%- include("../partials/imports") %>
+  <%- include("../partials/meta", {title: "Interactions"}) %>
+</head>
+<body>
+  <%- include("../partials/nav") %>
+
+  <div class="center-mid">
+    <!--Page Content-->
+    <div class="form-container">
+      <p class="form-sign">Drug Interaction Checker</p>
+      <p class="sign-desc">Enter two drugs, herbals remedies, or over-the-counter medicines</p>
+      <form class="form" id="interactions-form">
+        <label>
+          <span>First medication:</span>
+          <input class="form-input t-left" name="med1" type="text" title="Medication 1">
+        </label>
+
+        <label>
+          <span>Second medication:</span>
+          <input class="form-input t-left" name="med2" type="text" title="Medication 2">
+        </label>
+
+        <button type="submit" class="submit-btn">Check Interaction</button>
+      </form>
+    </div>
+  </div>
+
+  <%- include("../partials/footer") %>
+</body>
+</html>

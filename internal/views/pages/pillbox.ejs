@@ -1,0 +1,26 @@
+<html lang="en">
+<head>
+  <%- include("../partials/imports") %>
+  <%- include("../partials/meta", {title: "Pillbox"}) %>
+</head>
+<body>
+  <%- include("../partials/nav") %>
+
+  <main>
+    <h1>Pillbox</h1>
+    <div class="pillbox-container">
+      <div id="pillbox">
+        <a href="#" class="day" id="monday"><h1 class="backdrop">Mon</h1></a>
+        <a href="#" class="day" id="tuesday"><h1 class="backdrop">Tues</h1></a>
+        <a href="#" class="day" id="wednesday"><h1 class="backdrop">Wed</h1></a>
+        <a href="#" class="day" id="thursday"><h1 class="backdrop">Thur</h1></a>
+        <a href="#" class="day" id="friday"><h1 class="backdrop">Fri</h1></a>
+        <a href="#" class="day" id="saturday"><h1 class="backdrop">Sat</h1></a>
+        <a href="#" class="day" id="sunday"><h1 class="backdrop">Sun</h1></a>
+      </div>
+    </div>
+  </main>
+
+  <%- include("../partials/footer") %>
+</body>
+</html>

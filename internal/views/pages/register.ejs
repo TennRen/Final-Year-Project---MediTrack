@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include("../partials/imports") %>
+  <%- include("../partials/meta", {title: "Register"}) %>
+</head>
+<body>
+
+  <div class="center-mid">
+    <!--register Form-->
+    <div class="form-container" id="register-form">
+      <p class="form-sign"> Register</p>
+      <form class="form" action="/api/auth/do-login" method="post">
+        <label><input class="form-input" name="first_name" type="text" placeholder="First Name" required></label>
+        <label><input class="form-input" name="last_name" type="text" placeholder="Last Name" required></label>
+        <label><input class="form-input" name="email" type="email" placeholder="Email" required></label>
+        <label><input class="form-input" name="password" type="password" placeholder="Password" required></label>
+        <br>
+        <button type="submit" class="submit-btn">Register</button>
+        <br>
+        <span class="sub-hint">Already have an account? <a href="/login" class="sub-link">Log In</a></span>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    $('#register-form').on('submit', ev => {
+      ev.preventDefault();
+      ev.stopPropagation();
+      performRegister(
+              $('[name=first_name]').val(),
+              $('[name=last_name]').val(),
+              $('[name=email]').val(),
+              $('[name=password]').val()
+      );
+    });
+  </script>
+
+  <%- include("../partials/footer") %>
+
+</body>
+</html>
